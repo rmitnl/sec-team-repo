@@ -2,7 +2,6 @@ import sys
 from vars import *
 from netmiko import ConnectHandler
 
-print(sys.argv[1:])
 # check for 2 args
 if len(sys.argv) != 3:
     print('2 args required')
