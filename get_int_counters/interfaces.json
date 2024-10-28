@@ -1,13 +1,13 @@
 {
   "type": "object",
   "properties": {
-    "text1": {
-      "type": "string",
-      "title": "interface"
-    },
     "device": {
       "type": "string",
-      "title": "Device",
+      "title": "device"
+    },
+    "interface": {
+      "type": "string",
+      "title": "interface",
       "enum": [
         "ethernet 1/1/1",
         "ethernet 1/1/2",
