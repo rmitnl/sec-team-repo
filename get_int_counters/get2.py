@@ -24,11 +24,21 @@ device = device.strip('\"')
 interface = interface[12:]
 interface = interface.strip('\"')
 
+if device not in ["192.168.123.12", "192.168.123.13"]:
+    print('Invalid device ip')
+    sys.exit(1)
+
+if interface not in ["ethernet 1/1/1", "ethernet 1/1/2", "ethernet 1/1/3", "ethernet 1/1/4"]:
+    print('Invalid interface name')
+    sys.exit(1)
+
 # run the show command
-print (device,interface)
-network = ConnectHandler(device_type='brocade_fastiron', ip=device, username=var_u, password=var_p,secret=var_s)
+#print('--------------------------------')
+#print(device,interface)
+#print('--------------------------------')
+network = ConnectHandler(device_type='brocade_fastiron',ip=device,username=var_u,password=var_p,secret=var_s)
 output = network.send_command("show statistics "+interface)
 
 # show output
-print (output)
+print(output)
 network.disconnect()
