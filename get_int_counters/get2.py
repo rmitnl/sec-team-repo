@@ -25,7 +25,7 @@ interface = interface[12:]
 interface = interface.strip('\"')
 
 # run the show command
-#print (device,interface)
+print (device,interface)
 network = ConnectHandler(device_type='brocade_fastiron', ip=device, username=var_u, password=var_p,secret=var_s)
 output = network.send_command("show statistics "+interface)
 
