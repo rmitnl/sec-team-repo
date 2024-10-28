@@ -22,7 +22,9 @@ if interface[0:11] != "--interface":
 
 # extract variables
 device = device[9:]
+device = device.strip('\"')
 interface = interface[12:]
+interface = interface.strip('\"')
 
 print (device,interface)
 network = ConnectHandler(device_type='brocade_fastiron', ip=device, username=var_u, password=var_p,secret=var_s)
