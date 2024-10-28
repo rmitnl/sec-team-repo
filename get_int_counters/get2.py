@@ -7,27 +7,28 @@ if len(sys.argv) != 3:
     print('2 args required')
     sys.exit(1)
 
-device = sys.argv[1]
-interface = sys.argv[2]
-
 #check for correct args
+device = sys.argv[1]
 if device[0:8] != "--device":
     print('No device ip')
     sys.exit(1)
 
+interface = sys.argv[2]
 if interface[0:11] != "--interface":
     print('No interface name')
     sys.exit(1)
 
-# extract variables
+# extract data from args 
 device = device[9:]
 device = device.strip('\"')
 interface = interface[12:]
 interface = interface.strip('\"')
 
-print (device,interface)
+# run the show command
+#print (device,interface)
 network = ConnectHandler(device_type='brocade_fastiron', ip=device, username=var_u, password=var_p,secret=var_s)
 output = network.send_command("show statistics "+interface)
-print (output)
 
+# show output
+print (output)
 network.disconnect()
