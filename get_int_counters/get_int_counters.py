@@ -7,11 +7,11 @@ if len(sys.argv) != 3:
     print('2 args required')
     sys.exit(1)
 
-if argv[1][0:7] != "--device"
+if argv[1][0:7] != "--device":
     print('No device ip')
     sys.exit(1)
 
-if argv[2][0:11] != "--interface"
+if argv[2][0:11] != "--interface":
     print('No interface name')
     sys.exit(1)
 
